@@ -1,4 +1,4 @@
-const axios = require("axios");
+
 
 class Engineer {
     constructor(name, id, email, GitHubName) {
@@ -14,23 +14,17 @@ class Engineer {
         }
     }
     getGithub() {
-        const queryUrl = `https://api.github.com/users/${this.github}`;
-        console.log(queryUrl);
-        axios
-        .get(queryUrl)
-        .then(function (res) {
-
-            console.log("get name: ",res.data.login);
-            return res.data.login;
-        })
-
+        if(this.getGithub !== ""){
+            return this.github;
+        }
     }
 }
-const testValue = "GitHubUser";
-const testRole = "Engineer";
-  const e = new Engineer("Foo", 1, "test@test.com", testValue);
-  console.log("return: ",e.getGithub());
-  console.log("getRole: ",e.getRole());
-  console.log("github Name: ",e.github);
+// const testValue = "GitHubUser";
+// const testRole = "Engineer";
+//   const e = new Engineer("Foo", 1, "test@test.com", testValue);
+//   console.log("return: ",e.getGithub());
+//   console.log("getRole: ",e.getRole());
+//   console.log("github Name: ",e.github);
 //   console.log(e)
 
+module.exports = Engineer;

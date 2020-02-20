@@ -1,10 +1,10 @@
 class Employee {
     constructor(name, id, email) {
-        this.name = name,
-        this.id = id,
+        this.name = name;
+        this.id = id;
         this.email = email
     }
-    
+
     getName() {
         if (this.name !== "") {
             return this.name;
@@ -35,16 +35,16 @@ class Employee {
 
 
 function checkEmail(email) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) {
-        return (true)
-    }
-    return (false)
+    let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
-const name = "Alice";
-const testValue = 100;
-const testEmail = "test@test.com";
-const e = new Employee(name,testValue,testEmail);
-console.log(e);
-console.log(e.getName());
-console.log(e.getId());
-console.log(e.getRole());
+// const name = "Alice";
+// const testValue = 100;
+// const testEmail = "test@test.com";
+// const e = new Employee(name,testValue,testEmail);
+// console.log(e);
+// console.log(e.getName());
+// console.log(e.getId());
+// console.log(e.getRole());
+
+module.exports = Employee;
