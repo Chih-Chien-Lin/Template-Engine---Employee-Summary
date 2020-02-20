@@ -4,6 +4,7 @@ class Employee {
         this.id = id,
         this.email = email
     }
+    
     getName() {
         if (this.name !== "") {
             return this.name;
